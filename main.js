@@ -3,15 +3,15 @@ new Vue({
     * So you have your deck, and :
     * -el is where you put your deck
     * -data is how you'd describe the cards in your deck.
-    * -created is how you first set out your deck
-    * -methods are everything you do with the deck
+    * -created is how you first set out your deck (and is inside data? Wait...)
+    * -methods are everything you do with the deck (except the create event, I guess)
     * -this is... this deck.
     * */
     el: '#app',
     data: {
-      ranks: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'],
+      ranks: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'P', 'Kn','Q', 'K'],
       //Not doing anything with this yet
-      majorRanks: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22' ],
+      majorRanks: ['Fool - 0', 'Magician - 1', 'High Priestess - 2', 'Empress - 3', 'Emperor - 4', 'Hierophant - 5', 'Lovers - 6', 'Chariot - 7', 'Strength - 8', 'Hermit - 9', 'Wheel of Fortune - 10', 'Justice - 11', 'Hanged Man - 12', 'Death - 13', 'Temperance - 14', 'Devil - 15', 'Tower - 16', 'Star - 17', 'Moon - 18', ' Sun - 19', ' Judgement - 20', 'World - 21' ],
       suits: ['♥','♦','♠','♣'],
       cards: [],
       suitColor: {
@@ -20,6 +20,7 @@ new Vue({
         '♦': 'red',
         '♥': 'red',
       },
+      shuffleSpeed: 'shuffleMedium',
     },
     created() {
         this.displayInitialDeck();

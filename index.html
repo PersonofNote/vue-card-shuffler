@@ -16,20 +16,21 @@
             Card Shuffling
         </h1>
         <div class="main-buttons">
-            <!--@click == v-on -->
+            <!-- SS@click == v-on -->
                 <button @click="shuffleDeck" class="button is-primary">
                   Shuffle <i class="fas fa-random"></i>
                 </button>
               </div>
         <!--The v-for directive requires the syntax of item in the items array that’s being iterated over. We’ll declare the statement 
             with an alias of card as the item that’s being iterated. For each card item, we’ll bind the values of the card rank and suit 
-            on to the element. This now updates our index.html file to the following:-->
-        <div class="deck">
+            on to the element. This now updates our index.html file to the following:
+        Then we replace the div with a transition group which acts as a div-like wrapper with animation -->
+            <transition-group :name="shuffleSpeed" tag="div" class="deck">
             <div v-for="card in cards" :key="card.id" class="card" :class="suitColor[card.suit]">
                 <span class="card__suit card__suit--top">{{ card.suit }}</span>
                 <span class="card__number">{{ card.rank }} </span>
                 <span class="card__suit card__suit--bottom">{{ card.suit }}</span>
-            </div>
+            </transition-group>
         </div>
     </div>
 
