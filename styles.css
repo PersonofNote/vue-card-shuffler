@@ -1,0 +1,28 @@
+.vue-logo {
+    height:64px;
+    width: 64px;
+}
+
+.card {
+    height: 250px;
+    width: 200px;
+    border: 1px solid gray;
+    box-shadow: 4px gray;
+    margin: 1rem auto;
+}
+
+
+@media (max-width: 900px) {
+    .projects-card-container {
+        flex-direction: column;
+        width: 100%;
+    }        
+    .project-card {
+        width: 90%;
+        margin: 1rem auto;
+        .project-text {
+            padding: 0 0.25rem;
+        }
+    }
+
+}
