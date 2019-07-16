@@ -9,8 +9,29 @@ new Vue({
     suits: ['♥','♦','♠','♣'],
     cards: [],
   },
+  //Add create event
+  created() {
+      this.displayInitialDeck();
+  }
   //Add actions
   methods: {
-  displayInitialDeck() {/*Initialize id at 1, initialize value as [], loop through.*/},
+  displayInitialDeck() {
+      let id = 1;
+      this.cards = [];
+
+      for( let s=0; s < this.suits.length; s++ ) {
+          for ( let r=0; r < this.ranks.length; r++ ) {
+              let card = {
+                  id: id,
+                  rank: this.ranks[r],
+                  suit: this.suits[s]
+              }
+              this.cards.push(card);
+              id++;
+          }
+          //No return needed; data variables are reactive by default
+          //(When the variable changes, the view re-renders)
+      }
+  },
   }
 });
