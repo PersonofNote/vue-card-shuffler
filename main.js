@@ -9,8 +9,8 @@ new Vue({
     * */
     el: '#app',
     data: {
+      currentCard: 0,
       ranks: ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'P', 'Kn','Q', 'K'],
-      //Not doing anything with this yet
       majorRanks: ['Fool - 0', 'Magician - 1', 'High Priestess - 2', 'Empress - 3', 'Emperor - 4', 'Hierophant - 5', 'Lovers - 6', 'Chariot - 7', 'Strength - 8', 'Hermit - 9', 'Wheel of Fortune - 10', 'Justice - 11', 'Hanged Man - 12', 'Death - 13', 'Temperance - 14', 'Devil - 15', 'Tower - 16', 'Star - 17', 'Moon - 18', ' Sun - 19', ' Judgement - 20', 'World - 21' ],
       suits: ['♥','♦','♠','♣'],
       cards: [],
@@ -65,5 +65,11 @@ new Vue({
             Vue.set(this.cards, randomIndex, temp);
           }
       },
+      next() {
+        if (this.currentCard+1 < this.cards.length) {
+            this.currentCard++;
+            console.log(this.cards[this.currentCard]);
+        }
+    }
     },
   });
