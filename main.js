@@ -28,7 +28,7 @@ new Vue({
       displayInitialDeck() {
         let id = 1;
         this.cards = [];
-  
+        //Regular cards
         for( let s = 0; s < this.suits.length; s++ ) {
           for( let r = 0; r < this.ranks.length; r++ ) {
             let card = {
@@ -39,6 +39,16 @@ new Vue({
             this.cards.push(card);
             id++;
           }
+        }
+        //Major Arcana
+        for (let t = 0; t < this.majorRanks.length; t++){
+            let card = {
+                id: id, //See if this increments properly
+                rank: this.majorRanks[t],
+                suit: "❗"
+            }
+            this.cards.push(card);
+            id++
         }
       },
       shuffleDeck() {
