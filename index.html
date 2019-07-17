@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <h1 class="title">
-            <img class="vue-logo" src="https://vuejs.org/images/logo.png" />
+ 
             Card Shuffling
         </h1>
         <div class="main-buttons">
@@ -33,10 +33,12 @@
                 <span class="card__suit card__suit--bottom">{{ cards[currentCard].suit }}</span>
             </transition-group>
         </div>
+        
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./main.js"></script>
 </body>
 
